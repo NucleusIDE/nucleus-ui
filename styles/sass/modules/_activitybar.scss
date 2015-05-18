@@ -1,0 +1,63 @@
+$activitybar-bg-color: #333;
+$action-label-height: 40px;
+$action-icon-size: 23px;
+
+.activitybar {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  min-width: 50px;
+  height: 100vh;
+  color: $primary-color;
+  background-color: $activitybar-bg-color;
+  box-sizing: border-box;
+}
+
+.activitybar__content {
+  background-color: $tertiary-bg-color;
+  height: 100%;
+}
+
+.activitybar__actionbar {
+  text-align: left;
+  background-color: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.activitybar__actions-list {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.activitybar__actions-list-item {
+  position: relative;
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.activitybar__action-label {
+  line-height: $action-label-height;
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: $action-label-height;
+  margin-right: 0;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .8);
+  justify-content: center;
+  align-items: center;
+}
+.activitybar__action-icon {
+  font-size: $action-icon-size;
+  width: 100%;
+  transition: color 100ms ease;
+  text-align: center;
+  color: $primary-color;
+}
+.activitybar__action-icon:hover {
+  color: white;
+}
