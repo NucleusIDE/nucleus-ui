@@ -1,9 +1,10 @@
 @import "base";
 @import "config";
+
 @import "modules/reset";
 @import "modules/font-awesome";
-  
+
 @import "text";
-@import "modules/workbench";
-@import "modules/activitybar";
-@import "modules/editor";
+
+@import "../views/workbench/workbench";
+@import "../views/activitybar/activitybar";
