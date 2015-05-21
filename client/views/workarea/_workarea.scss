@@ -1,0 +1,18 @@
+.workarea {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 50px; //XXX: make this dynamic with js
+  position: absolute;
+  background-color: $secondary-bg-color;
+  background-image: url('/packages/nucleuside_nucleus/public/logo-black.png');
+  background-repeat: no-repeat;
+  background-size: 15%;
+  background-position: 50% 50%;
+}
+
+.workarea__content {
+  font-size: $base-font-size;
+}
