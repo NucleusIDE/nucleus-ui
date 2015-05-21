@@ -1,18 +1,24 @@
 <template name="statusbar">
   <div class="statusbar">
-    <div class="statusbar__item"> 
+    <div class="statusbar__item">
       <a class="statusbar__username" href="#">@channikhabra</a>
     </div>
 
     <div class="statusbar__item">
       <a class="statusbar__terminal" href="#">
-        <i class="fa fa-terminal"></i>
+        <span class="fa-stack">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+        </span>
       </a>
     </div>
 
     <div class="statusbar__item statusbar__item--right">
       <a class="statusbar__feedback" href="#">
-        <i class="fa fa-smile-o fa-inverse"></i>
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-1x"></i>
+            <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i>
+          </span>
       </a>
     </div>
   </div>
