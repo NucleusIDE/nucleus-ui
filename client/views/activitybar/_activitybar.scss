@@ -1,4 +1,3 @@
-$activitybar-bg-color: #333;
 $action-label-height: 40px;
 $action-icon-size: 23px;
 
@@ -8,11 +7,11 @@ $action-icon-size: 23px;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50px;
-  min-width: 50px;
+  width: $activitybar-width;
+  min-width: $activitybar-width;
   height: 100vh;
   color: $primary-color;
-  background-color: $activitybar-bg-color;
+  background-color: $tertiary-bg-color;
   box-sizing: border-box;
 }
 
