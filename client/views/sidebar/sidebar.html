@@ -1,5 +1,7 @@
-<template name="sidebar">
+<template name="nucleusSidebar">
+  {{#if activeTemplate}}
   <div class="sidebar">
-    {{> nucleusSidebarGit}}
+    {{> UI.dynamic template=activeTemplate}}
   </div>
+  {{/if}}
 </template>
