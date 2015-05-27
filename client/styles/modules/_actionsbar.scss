@@ -1,0 +1,33 @@
+$action-height: 16px;
+
+.nucleus-actionsbar {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.nucleus-actionsbar__container {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.nucleus-actionsbar__item {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 100ms ease;
+
+  .action-label {
+    font-size: $action-height;
+    line-height: $action-height;
+    width: $action-height;
+    height: $action-height;
+    margin-top: 4px;
+    margin-right: .2em;
+    color: #fff;
+    background-repeat: no-repeat;
+  }
+}

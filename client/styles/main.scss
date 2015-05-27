@@ -1,13 +1,20 @@
+@import "modules/font-awesome";
+@import "modules/reset";
 @import "base";
 @import "config";
-
-@import "modules/reset";
-@import "modules/font-awesome";
-
-@import "text";
-
 @import "../views/workbench/workbench";
-@import "../views/activitybar/activitybar";
-@import "../views/workarea/workarea";
-@import "../views/statusbar/statusbar";
-@import "../views/sidebar/sidebar";
+
+.nucleus-workbench {
+  @import "modules/text";
+  @import "modules/forms";
+  @import "modules/nucleus-left-right-widget";
+  @import "modules/nucleus-count-badge";
+  @import "modules/nucleus-tree";
+  @import "modules/actionsbar";
+
+  @import "../views/activitybar/activitybar";
+  @import "../views/workarea/workarea";
+  @import "../views/statusbar/statusbar";
+  @import "../views/sidebar/sidebar";
+  @import "../views/sidebar/git/git";
+}

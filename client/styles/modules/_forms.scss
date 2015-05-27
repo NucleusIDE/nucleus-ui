@@ -1,0 +1,31 @@
+.nucleus-inputbox {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $base-font-size;
+  font-size: inherit;
+}
+.nucleus-inputbox--idle {
+  border: 1px solid transparent;
+}
+
+.nucleus-inputbox__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.nucleus-inputbox__input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  line-height: inherit;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 4px;
+  background-color: $inputs-base-bg-color;
+}

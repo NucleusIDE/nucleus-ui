@@ -1,67 +1,79 @@
 $sidebar-title-color: #bbbbbb;
-$sidebar-title-font-size: 11px;
 $sidebar-title-height: 35px;
 
-.nucleus-workbench {
-  .sidebar {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    bottom: 0;
-    left: $activitybar-width;
-    width: $sidebar-width;
-    height: 100%;
-    color: #ccc;
-    background-color: $primary-bg-color;
-  }
-  .sidebar-title {
-    overflow: hidden;
-    white-space: no-wrap;
-    padding: 0 8px;
-    height: $sidebar-title-height;
-  }
-  .sidebar__title-label {
-    font-size: $sidebar-title-font-size;
-    padding: 12px 0 0 12px;
-    line-height: normal;
-    text-transform: uppercase;
-    text-overflow: ellipsis;
-    color: $sidebar-title-color;
-  }
-  .sidebar__title-actions {
-    float: right;
-    height: $sidebar-title-height;
-  }
-  .sidebar__toolbar {
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-  }
-  .sidebar__actions-container {
-    display: inline-block;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-  }
-  .sidebar__action-item {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 100ms ease;
-  }
-  .asidebar__action-item-action {
-    display: block;
-    margin: 8px 0 0;
-    width: 28px;
-    height: 30px;
-    font-size: 15px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-  }
+.sidebar {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: $activitybar-width;
+  width: $sidebar-width;
+  height: 100%;
+  color: #ccc;
+  background-color: $primary-bg-color;
+}
+.sidebar-title {
+  overflow: hidden;
+  white-space: no-wrap;
+  padding: 0 8px;
+  height: $sidebar-title-height;
+}
+.sidebar__title-label {
+  font-size: 11px;
+  padding: 12px 0 0 12px;
+  line-height: normal;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  color: $sidebar-title-color;
+}
+.sidebar__title-actions {
+  float: right;
+  height: $sidebar-title-height;
+}
+.sidebar__toolbar {
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+}
+.sidebar__actions-container {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+.sidebar__action-item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+.asidebar__action-item-action {
+  font-size: 15px;
+  display: block;
+  width: 28px;
+  height: 30px;
+  margin: 8px 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.sidebar-content {
+  font-size: $base-font-size;
+  overflow: hidden;
+  width: $sidebar-width;
+  height: 100%;
+}
+.viewlet,
+.git-viewlet,
+.changes-view {
+  height: 100%;
+}
+.commit-view {
+  box-sizing: border-box;
+  height: 38px;
+  padding: 5px 9px 5px 16px;
+}
 
-  .sidebar-content {
-    width: $sidebar-width;
-    height: 100%;
-  }
+.status-view {
+  height: 100%;
 }

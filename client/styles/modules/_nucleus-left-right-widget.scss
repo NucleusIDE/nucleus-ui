@@ -1,0 +1,14 @@
+.nucleus-left-right-widget {
+  color: inherit;
+}
+
+.nucleus-left-right-widget__left {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.nucleus-left-right-widget__right {
+  float: right;
+}
