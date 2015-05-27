@@ -49,14 +49,32 @@ $action-icon-size: 23px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .8);
   justify-content: center;
   align-items: center;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 .activitybar__action-icon {
   font-size: $action-icon-size;
   width: 100%;
   transition: color 100ms ease;
   text-align: center;
-  color: $primary-color;
-}
-.activitybar__action-icon:hover {
   color: white;
+}
+
+.activitybar__action-label--active {
+  opacity: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 4px solid #252526;
+  }
 }
