@@ -14,7 +14,7 @@ $nucleus-tree-height: 24px;
   height: 100%;
   width: 100%;
   position: relative;
-  absolute: hidden;
+  overflow: hidden;
 }
 .nucleus-tree__rows {
   position: absolute;
@@ -36,6 +36,8 @@ $nucleus-tree-height: 24px;
 }
 .nucleus-tree__row-content {
   line-height: $nucleus-tree-height;
+  position: relative;
+  transition: all 0.15s ease-out;
 }
 .nucleus-tree__row-subcontent {
   overflow: hidden;
@@ -56,4 +58,19 @@ $nucleus-tree-height: 24px;
   display: none;
   margin-top: 2px;
   padding: 0 1em 0 .4em;
+}
+.nucleus-tree__row-actionsbar--right {
+  right: 0;
+  left: auto;
+}
+.nucleus-tree__row-actionsbar--left {
+  left: 0;
+  right: auto;
+  line-height: 1.7em;
+}
+
+.nucleus-tree__row:hover {
+  .nucleus-tree__row-actionsbar {
+    display: inherit;
+  }
 }

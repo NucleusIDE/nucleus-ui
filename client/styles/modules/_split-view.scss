@@ -1,0 +1,65 @@
+$split-view-header-height: 24px;
+
+.split-view {
+  position: relative;
+}
+
+.split-view-view {
+  min-height: $split-view-header-height;
+  widget: 100%;
+  overflow: hidden;
+}
+
+.split-view-header {
+  position: relative;
+  line-height: $split-view-header-height;
+  height: $split-view-header-height;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 20px;
+  background: rgba(128, 128, 128, 0.1);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.split-view-header--collapsible {
+  background-image: url("/ui/widgets/arrow-collapse-dark.svg");
+  background-position: 2px center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.split-view-header--collapsible:not(.split-view-header--collapsed) {
+  background-image: url("/ui/widgets/arrow-expand-dark.svg")
+}
+.split-view-header--collapsed {
+  height: $split-view-header-height;
+}
+
+.split-view-header-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.split-view-header:hover .split-view-header-actions {
+  display: block;
+}
+.split-view-header-actions {
+  display: none;
+  float: right;
+  padding-right: 8px;
+}
+
+.split-view-header--collapsed:hover > .split-view-header-actions {
+  display: none;
+}
+
+.split-view-body {
+  height: calc(100% - 24px);
+}
+.split-view-collapsible {
+
+}

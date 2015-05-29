@@ -5,16 +5,20 @@
 @import "../views/workbench/workbench";
 
 .nucleus-workbench {
+  @import "modules/misc";
   @import "modules/text";
   @import "modules/forms";
   @import "modules/nucleus-left-right-widget";
   @import "modules/nucleus-count-badge";
   @import "modules/nucleus-tree";
   @import "modules/actionsbar";
+  @import "modules/split-view";
+  @import "modules/sidebar-toolbar";
 
   @import "../views/activitybar/activitybar";
   @import "../views/workarea/workarea";
   @import "../views/statusbar/statusbar";
   @import "../views/sidebar/sidebar";
   @import "../views/sidebar/git/git";
+  @import "../views/sidebar/explore/explore";
 }

@@ -1,0 +1,32 @@
+.sidebar-toolbar {
+  .action-bar {
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .actions-container {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    widget: 100%;
+  }
+  .action-item {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 100ms ease;
+  }
+  .action-label {
+    font-size: 16px;
+    line-height: 16px;
+    display: inline-block;
+    width: 28px;
+    height: 16px;
+    margin-top: 4px;
+    margin-right: 0;
+    color: #fff;
+  }
+  .action-item--disabled {
+    cursor: default;
+  }
+}
