@@ -1,16 +1,21 @@
+$sidebar-toolbar-height: 24px;
+
 .sidebar-toolbar {
   .action-bar {
     overflow: hidden;
     text-align: center;
     white-space: nowrap;
+    height: $sidebar-toolbar-height
   }
   .actions-container {
+    height: inherit;
     display: inline-block;
     margin: 0 auto;
     padding: 0;
     widget: 100%;
   }
   .action-item {
+    height: inherit;
     position: relative;
     display: inline-block;
     cursor: pointer;

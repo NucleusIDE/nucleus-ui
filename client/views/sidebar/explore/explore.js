@@ -3,6 +3,7 @@ LiveUpdate.configure({
 });
 
 var workingFilesState = new ReactiveDict();
+var projectExplorerState = new ReactiveDict();
 
 workingFilesState.set("workingFiles", [{
   file: "_base.scss",
@@ -16,14 +17,20 @@ workingFilesState.set("workingFiles", [{
 }]);
 workingFilesState.set("collapsed", true);
 
+workingFilesState.set("filetree", {});
+projectExplorerState.set('collapsed', true);
+
 Template.nucleusSidebarExplore.events({
-  "click .split-view-header": function(e) {
+  "click .header-working-files": function(e) {
     workingFilesState.set('collapsed', ! workingFilesState.get('collapsed'));
   },
   "click .action-item": function(e) {
     e.preventDefault();
     e.stopPropagation();
-  }
+  },
+  "click .header-project-explorer": function(e) {
+    projectExplorerState.set('collapsed', ! projectExplorerState.get('collapsed'));
+  },
 });
 
 Template.nucleusSidebarExplore.helpers({
@@ -42,5 +49,11 @@ Template.nucleusSidebarExplore.helpers({
           0 : height;
 
     return appliedHeight;
+  },
+  projectName: function() {
+    return "Nucleus Code UI";
+  },
+  projectExplorerCollapsedClass: function() {
+    return projectExplorerState.get('collapsed') ? "split-view-header--collapsed" : '';
   }
 });

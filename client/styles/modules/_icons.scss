@@ -1,0 +1,28 @@
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.icon-close-file {
+  background: url('ui/workbench/contrib/action-close-dark.svg') center center no-repeat;
+}
+
+.icon-save-all {
+  background: url('ui/workbench/contrib/saveall_inverse.svg') center center no-repeat;
+}
+.icon-close-all {
+  background: url('ui/workbench/contrib/closeall_inverse.svg') center center no-repeat;
+}
+
+.icon-new-file {
+  background: url('ui/workbench/contrib/AddFile_inverse.svg') center center no-repeat;
+}
+.icon-new-folder {
+  background: url('ui/workbench/contrib/AddFolder_inverse.svg') center center no-repeat;
+}
+.icon-refresh-explorer {
+  background: url('ui/workbench/contrib/Refresh_inverse.svg') center center no-repeat;
+}
+.icon-collapse-explorer {
+  background: url('ui/workbench/contrib/CollapseAll_inverse.svg') center center no-repeat;
+}
