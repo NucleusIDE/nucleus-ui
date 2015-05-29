@@ -4,6 +4,10 @@
 
 .explorer-view-content {
   height: 100%;
+
+  .nucleus-tree__row {
+    padding-left: 8px;
+  }
 }
 .explorer-working-files {
   .nucleus-tree__row-subcontent {
