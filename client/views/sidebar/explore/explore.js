@@ -1,6 +1,6 @@
-LiveUpdate.configure({
-  interceptReload: false
-});
+// LiveUpdate.configure({
+//   interceptReload: false
+// });
 
 var workingFilesState = new ReactiveDict();
 var projectExplorerState = new ReactiveDict();
