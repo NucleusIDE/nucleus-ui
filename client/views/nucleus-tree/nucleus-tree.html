@@ -1,0 +1,28 @@
+<template name="nucleusTree">
+  <div class="nucleus-tree" style="height:{{treeHeight}};">
+    <div class="nucleus-tree__wrapper">
+      <div class="nucleus-tree__rows">
+
+        {{#each rows}}
+        <div class="nucleus-tree__row {{hasChildrenClass}}" style="{{styles}}">
+          <div class="nucleus-tree__row-content">
+
+            <div class="nucleus-tree__row-subcontent">
+
+              <div class="{{itemClasses}}">
+                <div class="{{labelClasses}} plain">
+                  {{name}}
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</template>

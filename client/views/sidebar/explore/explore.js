@@ -55,5 +55,11 @@ Template.nucleusSidebarExplore.helpers({
   },
   projectExplorerCollapsedClass: function() {
     return projectExplorerState.get('collapsed') ? "split-view-header--collapsed" : '';
+  },
+  projectExplorerStyles: function() {
+    var collapsed = projectExplorerState.get('collapsed');
+    var height = collapsed ? '0px' : '100%';
+    var display = collapsed ? 'none' : 'block';
+    return "{height: " + height + "; display: " + display + ";}";
   }
 });
