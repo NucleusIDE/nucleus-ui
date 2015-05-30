@@ -4,10 +4,10 @@
       <div class="nucleus-tree__rows">
 
         {{#each rows}}
-        <div class="nucleus-tree__row {{hasChildrenClass}}" style="{{styles}}">
-          <div class="nucleus-tree__row-content">
+        <div id="{{id}}" class="nucleus-tree__row {{rowClasses}}" style="{{styles}}" data-parent-id="{{parentId}}">
+          <div class="nucleus-tree__row-content {{contentClasses}}">
 
-            <div class="nucleus-tree__row-subcontent">
+            <div class="nucleus-tree__row-subcontent {{subcontentClasses}}">
 
               <div class="{{itemClasses}}">
                 <div class="{{labelClasses}} plain">
