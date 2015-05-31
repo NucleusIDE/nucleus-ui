@@ -18,6 +18,14 @@ var Utils = {
      */
     var oldVal = dict.get(key) || (isNum ? 0 : '');
     dict.set(key, oldVal + val);
+  },
+  rReplace: function(dict, key, oldVal, newVal) {
+    var val = dict.get(key);
+    val = val.replace(oldVal, newVal);
+    dict.set(key, val);
+  },
+  rToggle: function(dict, key) {
+    dict.set(key, ! dict.get(key));
   }
 };
 var Tree = function(nodes) {
@@ -33,6 +41,41 @@ Tree.prototype.getNodeLevel = function(node) {
   }
 
   return 1 + self.getNodeLevel(self.nodes[node.get('parentId')]);
+};
+
+Tree.prototype.setExpandAutorun = function(node) {
+  if(!node) return;
+  var self = this;
+
+  Tracker.autorun(function() {
+    var isExpanded = node.get('expanded');
+    var target = $(document.getElementById(node.get('id')));
+
+    if (isExpanded === false) {
+      Tracker.nonreactive(function() {
+        target.removeClass('nucleus-tree__row--expanded');
+
+        var children = self.$getAllChildren(node);
+        children.forEach(function(child) { $(child).addClass('hidden'); });
+      });
+    } else if (isExpanded === true) {
+      Tracker.nonreactive(function() {
+        target.addClass('nucleus-tree__row--expanded');
+
+        var children = self.$getAllChildren(node);
+
+        children.forEach(function(child) {
+          child = $(child);
+          parent = $(document.getElementById(child.attr('data-parent-id')));
+          if (parent.hasClass('nucleus-tree__row--expanded')) {
+            child.removeClass('hidden');
+          }
+        });
+
+      });
+    }
+
+  });
 };
 
 Tree.prototype.setNodes = function(nodes) {
@@ -55,18 +98,37 @@ Tree.prototype.setNodes = function(nodes) {
     var padding = (rowLevel * 12) + 20;
     Utils.rAdd(row, 'styles', ";padding-left: " + padding + "px;");
 
-    if (row.get('parentId'))
+    if (row.get('parentId')) {
       row.setDefault('expanded', false);
+      Utils.rAdd(row, 'rowClasses', 'hidden');
+    }
 
-    Tracker.autorun(function() {
-      var isExpanded = row.get('expanded');
-      if (isExpanded === false) {
-        Tracker.nonreactive(function() {
-          Utils.rAdd(row, 'rowClasses', ' hidden ');
-        });
-      }
-    });
+    self.setExpandAutorun(row);
   });
+};
+Tree.prototype.$getChildren = function(nodes) {
+  if (! Array.isArray(nodes)) {
+    nodes = [nodes];
+  }
+  var children = [];
+
+  nodes.forEach(function(node) {
+    if (!(node instanceof ReactiveDict)) {
+      node = $(node); //kill two birds with one stone. Am I genius or what? /s
+      node.get = node.attr.bind(node);
+    }
+    children = children.concat($('[data-parent-id="'+ node.get('id') +'"]').toArray());
+  });
+
+  return children;
+};
+Tree.prototype.$getAllChildren = function(nodes) {
+  var children = this.$getChildren(nodes);
+
+  if (!children.length)
+    return children;
+
+  return children.concat(this.$getAllChildren(children));
 };
 
 var tree = new Tree([{
@@ -105,11 +167,6 @@ Template.nucleusTree.helpers({
 
 Template.nucleusTree.events({
   "click .nucleus-tree__row": function(e) {
-    var target = $(e.currentTarget);
-    var row = this;
-    if (this.get('hasChildren'))
-      target.toggleClass('nucleus-tree__row--expanded');
-
-    $('[data-parent-id="' + this.get('id') + '"]').toggleClass('hidden');
+    Utils.rToggle(this, 'expanded');
   }
 });
