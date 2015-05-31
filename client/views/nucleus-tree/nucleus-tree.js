@@ -1,54 +1,72 @@
+UI.registerHelper('rDict', function(dict, key) {
+  /**
+   * Return `key` of reactive `dict`. Assumes `dict` to be `this` if only `key` is given
+   */
+  if (typeof key !== 'string') {
+    key = dict;
+    dict = this;
+  }
+
+  window.reactiveDict = dict;
+  return dict.get(key);
+});
+
+var Utils = {
+  rAdd: function(dict, key, val, isNum) {
+    /**
+     * Reactive add. Add 'val' to present val of dict
+     */
+    var oldVal = dict.get(key) || (isNum ? 0 : '');
+    dict.set(key, oldVal + val);
+  }
+};
 var Tree = function(nodes) {
   this.setNodes(nodes);
   return this;
 };
-Tree.prototype.setNodes = function(nodes) {
-  var self = this;
-  this.nodes = nodes;
-  this.nodes = nodes.map(function(row) {
-    row.rowClasses = row.rowClasses || '';
-    if (row.hasChildren)  //show icon in front of row with children
-      row.rowClasses += ' nucleus-tree__row--has-children ';
 
-    //set the left-padding as per row's level
-    var basePadding = 20;
-    var rowLevel = self.getNodeLevel(row);
-    var padding = (rowLevel * 12) + basePadding;
-    row.styles = "padding-left: " + padding + "px;";
-
-    if (row.parentId) {
-      row.rowClasses += ' hidden ';
-    }
-
-    return row;
-  });
-};
-Tree.prototype.findById = function(nodeId) {
-  for(var i = 0; i < this.nodes.length; i++) {
-    if (this.nodes[i].id === nodeId) {
-      return this.nodes[i];
-    }
-  }
-};
 Tree.prototype.getNodeLevel = function(node) {
   var self = this;
 
-  if (!node.parentId) {
+  if (typeof node === 'undefined' || !node.get('parentId')) {
     return 1;
   }
 
-  return 1 + self.getNodeLevel(self.findById(node.parentId));
+  return 1 + self.getNodeLevel(self.nodes[node.get('parentId')]);
 };
-Tree.prototype.getChildren = function(node) {
-  var children = [];
 
-  for(var i = 0; i < this.nodes.length; i++) {
-    if (this.nodes[i].parentId === node.id) {
-      children.push(this.nodes[i]);
-    }
-  }
+Tree.prototype.setNodes = function(nodes) {
+  var self = this;
+  this.nodes = {};
 
-  return children;
+  nodes.forEach(function(row) {
+    self.nodes[row.id] = new ReactiveDict();
+
+    Object.keys(row).forEach(function(key) {
+      self.nodes[row.id].set(key, row[key]);
+    });
+    row = self.nodes[row.id];
+
+    if (row.get('hasChildren'))  //show icon in front of row with children
+      Utils.rAdd(row, 'rowClasses', ' nucleus-tree__row--has-children ');
+
+    //set the left-padding as per row's level
+    var rowLevel = self.getNodeLevel(row);
+    var padding = (rowLevel * 12) + 20;
+    Utils.rAdd(row, 'styles', ";padding-left: " + padding + "px;");
+
+    if (row.get('parentId'))
+      row.setDefault('expanded', false);
+
+    Tracker.autorun(function() {
+      var isExpanded = row.get('expanded');
+      if (isExpanded === false) {
+        Tracker.nonreactive(function() {
+          Utils.rAdd(row, 'rowClasses', ' hidden ');
+        });
+      }
+    });
+  });
 };
 
 var tree = new Tree([{
@@ -76,10 +94,12 @@ var tree = new Tree([{
 Template.nucleusTree.helpers({
   treeHeight: function() {
     var baseHeight = 24;
-    return tree.nodes.length * baseHeight + 'px';
+    return Object.keys(tree.nodes).length * baseHeight + 'px';
   },
   rows: function() {
-    return tree.nodes;
+    return Object.keys(tree.nodes).map(function(key) {
+      return tree.nodes[key];
+    });
   },
 });
 
@@ -87,9 +107,9 @@ Template.nucleusTree.events({
   "click .nucleus-tree__row": function(e) {
     var target = $(e.currentTarget);
     var row = this;
-    if (this.hasChildren)
+    if (this.get('hasChildren'))
       target.toggleClass('nucleus-tree__row--expanded');
 
-    $('[data-parent-id="' + this.id + '"]').toggleClass('hidden');
+    $('[data-parent-id="' + this.get('id') + '"]').toggleClass('hidden');
   }
 });

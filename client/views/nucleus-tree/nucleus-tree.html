@@ -3,15 +3,17 @@
     <div class="nucleus-tree__wrapper">
       <div class="nucleus-tree__rows">
 
+        <div class="nucleus-tree__row nucleus-tree__row--fake hidden"></div>
+
         {{#each rows}}
-        <div id="{{id}}" class="nucleus-tree__row {{rowClasses}}" style="{{styles}}" data-parent-id="{{parentId}}">
-          <div class="nucleus-tree__row-content {{contentClasses}}">
+        <div id="{{rDict 'id'}}" class="nucleus-tree__row {{rDict 'rowClasses'}}" style="{{rDict 'styles'}}" data-parent-id="{{rDict 'parentId'}}">
+          <div class="nucleus-tree__row-content {{rDict 'contentClasses'}}">
 
-            <div class="nucleus-tree__row-subcontent {{subcontentClasses}}">
+            <div class="nucleus-tree__row-subcontent {{rDict 'subcontentClasses'}}">
 
-              <div class="{{itemClasses}}">
-                <div class="{{labelClasses}} plain">
-                  {{name}}
+              <div class="{{rDict 'itemClasses'}}">
+                <div class="{{rDict 'labelClasses'}} plain">
+                  {{rDict "name"}}
                 </div>
               </div>
 
