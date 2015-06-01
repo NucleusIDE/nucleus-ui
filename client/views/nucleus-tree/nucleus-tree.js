@@ -1,33 +1,3 @@
-UI.registerHelper('rDict', function(dict, key) {
-  /**
-   * Return `key` of reactive `dict`. Assumes `dict` to be `this` if only `key` is given
-   */
-  if (typeof key !== 'string') {
-    key = dict;
-    dict = this;
-  }
-
-  window.reactiveDict = dict;
-  return dict.get(key);
-});
-
-var Utils = {
-  rAdd: function(dict, key, val, isNum) {
-    /**
-     * Reactive add. Add 'val' to present val of dict
-     */
-    var oldVal = dict.get(key) || (isNum ? 0 : '');
-    dict.set(key, oldVal + val);
-  },
-  rReplace: function(dict, key, oldVal, newVal) {
-    var val = dict.get(key);
-    val = val.replace(oldVal, newVal);
-    dict.set(key, val);
-  },
-  rToggle: function(dict, key) {
-    dict.set(key, ! dict.get(key));
-  }
-};
 var Tree = function(nodes) {
   this.setNodes(nodes);
   return this;

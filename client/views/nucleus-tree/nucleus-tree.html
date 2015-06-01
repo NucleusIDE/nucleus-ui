@@ -6,17 +6,15 @@
         <div class="nucleus-tree__row nucleus-tree__row--fake hidden"></div>
 
         {{#each rows}}
-        <div id="{{rDict 'id'}}" class="nucleus-tree__row {{rDict 'rowClasses'}}" style="{{rDict 'styles'}}" data-parent-id="{{rDict 'parentId'}}">
-          <div class="nucleus-tree__row-content {{rDict 'contentClasses'}}">
+        <div id="{{dict 'id'}}" class="nucleus-tree__row {{dict 'rowClasses'}}" style="{{dict 'styles'}}" data-parent-id="{{dict 'parentId'}}">
+          <div class="nucleus-tree__row-content {{dict 'contentClasses'}}">
 
-            <div class="nucleus-tree__row-subcontent {{rDict 'subcontentClasses'}}">
-
-              <div class="{{rDict 'itemClasses'}}">
-                <div class="{{rDict 'labelClasses'}} plain">
-                  {{rDict "name"}}
+            <div class="nucleus-tree__row-subcontent {{dict 'subcontentClasses'}}">
+              <div class="{{dict 'itemClasses'}}">
+                <div class="{{dict 'labelClasses'}} plain">
+                  {{dict "name"}}
                 </div>
               </div>
-
             </div>
 
           </div>

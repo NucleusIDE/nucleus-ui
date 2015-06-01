@@ -15,54 +15,54 @@
         <div class="split-view">
           <div class="split-view-view">
             <div class="header-working-files split-view-header {{workingFilesCollapsedClass}} split-view-header--collapsible">
-            <div class="split-view-header-actions">
-            <div class="sidebar-toolbar">
-            <div class="action-bar">
-            <ul class="actions-container">
-            <li class="action-item action-item--disabled">
-            <a class="action-label icon icon-save-all" href="" title="Save All"></a>
+              <div class="split-view-header-actions">
+                <div class="sidebar-toolbar">
+                  <div class="action-bar">
+                    <ul class="actions-container">
+                      <li class="action-item action-item--disabled">
+                        <a class="action-label icon icon-save-all" href="" title="Save All"></a>
                       </li>
-            <li class="action-item">
-            <a class="action-label icon icon-close-all" href="" title="Close All"></a>
+                      <li class="action-item">
+                        <a class="action-label icon icon-close-all" href="" title="Close All"></a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
-            <div class="split-view-header-title">
-            <span>Working Files</span>
-            <span class="nucleus-count-badge hidden"></span>
+              <div class="split-view-header-title">
+                <span>Working Files</span>
+                <span class="nucleus-count-badge hidden"></span>
               </div>
             </div>
             <div class="split-view-body split-view-collapsible">
-            <div class="explorer-view-content explorer-working-files" style="height: {{workingFilesHeight}}px">
-            <div class="nucleus-tree">
-            <div class="nucleus-tree__wrapper">
-            <div class="nucleus-tree__rows">
+              <div class="explorer-view-content explorer-working-files" style="height: {{workingFilesHeight}}px">
+                <div class="nucleus-tree">
+                  <div class="nucleus-tree__wrapper">
+                    <div class="nucleus-tree__rows">
 
-            {{#each workingFiles}}
-            <div class="nucleus-tree__row">
-            <div class="nucleus-tree__row-content">
-            <div class="nucleus-tree__row-subcontent">
-            <div class="working-files-item">
-            <div class="working-files-item-label">
-            <span class="file-name" href="">{{file}}</span>
-            <span class="file-path">{{filepath}}</span>
+                      {{#each workingFiles}}
+                      <div class="nucleus-tree__row">
+                        <div class="nucleus-tree__row-content">
+                          <div class="nucleus-tree__row-subcontent">
+                            <div class="working-files-item">
+                              <div class="working-files-item-label">
+                                <span class="file-name" href="">{{file}}</span>
+                                <span class="file-path">{{filepath}}</span>
                               </div>
                             </div>
                           </div>
-            <div class="nucleus-tree__row-actionsbar nucleus-tree__row-actionsbar--left">
-            <div class="nucleus-actionsbar">
-            <ul class="nucleus-actionsbar__container">
-            <li class="nucleus-actionsbar__item">
-            <a class="action-label icon icon-close-file" href=""></a>
+                          <div class="nucleus-tree__row-actionsbar nucleus-tree__row-actionsbar--left">
+                            <div class="nucleus-actionsbar">
+                              <ul class="nucleus-actionsbar__container">
+                                <li class="nucleus-actionsbar__item">
+                                  <a class="action-label icon icon-close-file" href=""></a>
                                 </li>
                               </ul>
                             </div>
                           </div>
                         </div>
                       </div>
-            {{/each}}
+                      {{/each}}
 
                     </div>
                   </div>
