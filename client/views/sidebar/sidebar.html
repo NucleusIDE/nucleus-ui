@@ -5,3 +5,26 @@
   </div>
   {{/if}}
 </template>
+
+
+<template name="nucleusSidebar_title">
+  <div class="sidebar-title">
+
+    {{#if actions}}
+    <div class="sidebar__title-actions">
+      <div class="sidebar__toolbar">
+        <ul class="sidebar__actions-container">
+          {{#each actions}}
+          <li class="sidebar__action-item">
+            <a class="asidebar__action-item-action {{actionClasses}}">
+              {{{actionContent}}}
+            </a></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="sidebar__title-label">{{title}}</div>
+  </div>
+</template>

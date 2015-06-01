@@ -1,19 +1,7 @@
 <template name="nucleusSidebarGit">
-  <div class="sidebar-title">
-    <div class="sidebar__title-actions">
-      <div class="sidebar__toolbar">
-        <ul class="sidebar__actions-container">
-          <li class="sidebar__action-item">
-            <a class="asidebar__action-item-action"><i class="fa fa-upload"></i></a></li>
-          <li class="sidebar__action-item">
-            <a class="asidebar__action-item-action"><i class="fa fa-download"></i></a></li>
-          <li class="sidebar__action-item">
-            <a class="asidebar__action-item-action"><i class="fa fa-refresh"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="sidebar__title-label">Git</div>
-  </div>
+  {{#with sidebarTitle}}
+  {{> nucleusSidebar_title}}
+  {{/with}}
 
   <div class="sidebar-content">
     <div class="viewlet">
@@ -28,7 +16,7 @@
           </div>
           <div class="status-view">
             {{#nucleusTree}}
-            {{#with header}}
+            {{#with changesHeader}}
             {{> nucleusTree_header_row}}
             {{/with}}
 

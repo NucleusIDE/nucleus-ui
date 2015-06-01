@@ -13,7 +13,17 @@ var statusRows = [{
 }];
 
 Template.nucleusSidebarGit.helpers({
-  header: function() {
+  sidebarTitle: function() {
+    return {
+      title: 'Git',
+      actions: [
+        {actionContent: "<i class='fa fa-upload'></i>"},
+        {actionContent: '<i class="fa fa-download"></i>'},
+        {actionContent: '<i class="fa fa-refresh"></i>'}
+      ]
+    };
+  },
+  changesHeader: function() {
     return {
       title: 'Changes',
       badgeCount: 2,
