@@ -1,0 +1,35 @@
+<template name="nucleusTree_status_row">
+  <div class="nucleus-tree__row">
+    <div class="nucleus-tree__row-content">
+      <div class="nucleus-tree__row-subcontent {{subcontentClasses}}">
+
+        {{#if status}}
+        <span class="status {{statusClasses}}">{{status}}</span>
+        {{/if}}
+
+        <div class="labelClasses">
+        <span class="file-name">{{filename}}</span>
+        <span class="folder">{{filepath}}</span>
+        </div>
+
+      </div>
+
+      {{#if actions}}
+      <div class="nucleus-tree__row-actionsbar nucleus-tree__row-actionsbar--left">
+        <div class="nucleus-actionsbar">
+          <ul class="nucleus-actionsbar__container">
+            {{#each actions}}
+            <li class="nucleus-actionsbar__item">
+              <a class="action-label {{actionLabelClasses}}" href="">
+                {{{actionContent}}}
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      {{/if}}
+
+    </div>
+  </div>
+</template>

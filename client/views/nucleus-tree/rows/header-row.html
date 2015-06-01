@@ -1,0 +1,39 @@
+<template name="nucleusTree_header_row">
+  <div id="{{dict 'id'}}" class="nucleus-tree__row {{dict 'rowClasses'}}" style="{{dict 'styles'}}">
+    <div class="nucleus-tree__row-content {{dict 'contentClasses'}}">
+
+      <div class="nucleus-tree__row-subcontent">
+
+        <div class="nucleus-tree__row-subcontent__status-group">
+          <div class="nucleus-left-right-widget">
+            <div class="nucleus-left-right-widget__right">
+              {{# if dict 'badgeCount'}}
+              <div class="nucleus-count-badge">
+                {{dict 'badgeCount'}}
+              </div>
+              {{/if}}
+            </div>
+            <div class="nucleus-left-right-widget__left">
+              <span>{{dict "title"}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nucleus-tree__row-actionsbar">
+        <div class="nucleus-actionsbar">
+          <ul class="nucleus-actionsbar__container">
+            {{#each dict 'actions'}}
+            <li class="nucleus-actionsbar__item">
+              <a id="{{id}}" class="action-label {{labelClasses}}" href="#" title="{{title}}">
+                {{{htmlContent}}}
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

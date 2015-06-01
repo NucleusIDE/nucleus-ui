@@ -27,65 +27,15 @@
             </div>
           </div>
           <div class="status-view">
-            <div class="nucleus-tree">
-              <div class="nucleus-tree__wrapper">
-                <div class="nucleus-tree__rows">
-                  <div class="nucleus-tree__row">
-                    <div class="nucleus-tree__row-content">
-                      <div class="nucleus-tree__row-subcontent">
-                        <div class="nucleus-tree__row-subcontent__status-group">
-                          <div class="nucleus-left-right-widget">
-                            <div class="nucleus-left-right-widget__right">
-                              <div class="nucleus-count-badge">12</div>
-                            </div>
-                            <div class="nucleus-left-right-widget__left">
-                              <span>Changes</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="nucleus-tree__row-actionsbar">
-                        <div class="nucleus-actionsbar">
-                          <ul class="nucleus-actionsbar__container">
-                            <li class="nucleus-actionsbar__item">
-                              <a class="action-label icon icon-undo" href="" title="Clean All"></a>
-                            </li>
-                            <li class="nucleus-actionsbar__item">
-                              <a class="action-label icon icon-add" href="" title="Stage All"></a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            {{#nucleusTree}}
+            {{#with header}}
+            {{> nucleusTree_header_row}}
+            {{/with}}
 
-                  <div class="nucleus-tree__row">
-                    <div class="nucleus-tree__row-content">
-                      <div class="nucleus-tree__row-subcontent">
-                        <div class="nucleus-tree-git-file-status">
-                          <span class="status status--modified">M</span>
-                          <a class="file-name" href="">_base.scss</a>
-                          <span class="folder">/client/styles</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="nucleus-tree__row">
-                    <div class="nucleus-tree__row-content">
-                      <div class="nucleus-tree__row-subcontent">
-                        <div class="nucleus-tree-git-file-status">
-                          <span class="status status--deleted">M</span>
-                          <a class="file-name file-name--deleted" href="">_case.scss</a>
-                          <span class="folder">/client/styles</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+            {{#each statusRows}}
+            {{> nucleusTree_status_row}}
+            {{/each}}
+            {{/nucleusTree}}
           </div>
         </div>
       </div>

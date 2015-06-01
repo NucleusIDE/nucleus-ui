@@ -1,0 +1,14 @@
+<template name="nucleusTree_collapse_row">
+  <div id="{{dict 'id'}}" class="nucleus-tree__row {{dict 'rowClasses'}}" style="{{dict 'styles'}}" data-parent-id="{{dict 'parentId'}}">
+    <div class="nucleus-tree__row-content {{dict 'contentClasses'}}">
+
+      <div class="nucleus-tree__row-subcontent {{dict 'subcontentClasses'}}">
+        <div class="{{dict 'itemClasses'}}">
+          <div class="{{dict 'labelClasses'}} plain">
+            {{dict "name"}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

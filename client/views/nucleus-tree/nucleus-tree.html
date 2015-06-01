@@ -1,26 +1,12 @@
 <template name="nucleusTree">
-  <div class="nucleus-tree" style="height:{{treeHeight}};">
+  <div class="nucleus-tree" style="height:{{height}};">
     <div class="nucleus-tree__wrapper">
       <div class="nucleus-tree__rows">
 
         <div class="nucleus-tree__row nucleus-tree__row--fake hidden"></div>
 
-        {{#each rows}}
-        <div id="{{dict 'id'}}" class="nucleus-tree__row {{dict 'rowClasses'}}" style="{{dict 'styles'}}" data-parent-id="{{dict 'parentId'}}">
-          <div class="nucleus-tree__row-content {{dict 'contentClasses'}}">
+        {{> UI.contentBlock}}
 
-            <div class="nucleus-tree__row-subcontent {{dict 'subcontentClasses'}}">
-              <div class="{{dict 'itemClasses'}}">
-                <div class="{{dict 'labelClasses'}} plain">
-                  {{dict "name"}}
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {{/each}}
       </div>
 
     </div>

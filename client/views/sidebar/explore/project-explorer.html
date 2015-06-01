@@ -1,0 +1,9 @@
+<template name="projectExplorer">
+  {{#nucleusTree height=treeHeight}}
+
+  {{#each rows}}
+  {{> nucleusTree_collapse_row}}
+  {{/each}}
+
+  {{/nucleusTree}}
+</template>

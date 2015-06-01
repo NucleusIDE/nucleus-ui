@@ -6,14 +6,29 @@ var workingFilesState = new ReactiveDict();
 var projectExplorerState = new ReactiveDict();
 
 workingFilesState.set("workingFiles", [{
-  file: "_base.scss",
-  filepath: "/client/app/styles"
+  labelClasses: 'working-files-item-label',
+  subcontentClasses: "working-files-item",
+  filename: "_base.scss",
+  filepath: "/client/app/styles",
+  actions: [{
+    actionLabelClasses: "icon icon-close-file"
+  }]
 }, {
-  file: "template.scss",
-  filepath: "/client/app/styles"
+  labelClasses: 'working-files-item-label',
+  subcontentClasses: 'working-files-item',
+  filename: "template.scss",
+  filepath: "/client/app/styles",
+  actions: [{
+    actionLabelClasses: "icon icon-close-file"
+  }]
 }, {
-  file: "admin_controller.js",
-  filepath: "/client/views/admin"
+  labelClasses: 'working-files-item-label',
+  subcontentClasses: 'working-files-item',
+  filename: "admin_controller.js",
+  filepath: "/client/views/admin",
+  actions: [{
+    actionLabelClasses: "icon icon-close-file"
+  }]
 }]);
 workingFilesState.set("collapsed", true);
 
