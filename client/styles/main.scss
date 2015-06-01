@@ -11,7 +11,6 @@
   @import "modules/nucleus-left-right-widget";
   @import "modules/nucleus-count-badge";
   @import "modules/actionsbar";
-  @import "modules/split-view";
   @import "modules/sidebar-toolbar";
   @import "modules/icons";
 
@@ -21,5 +20,6 @@
   @import "../views/sidebar/sidebar";
   @import "../views/sidebar/git/git";
   @import "../views/sidebar/explore/explore";
-  @import "../views/nucleus-tree/nucleus-tree";
+  @import "../views/widgets/split-view/split-view";
+  @import "../views/widgets/nucleus-tree/nucleus-tree";
 }

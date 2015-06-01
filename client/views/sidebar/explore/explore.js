@@ -30,31 +30,15 @@ workingFilesState.set("workingFiles", [{
     actionLabelClasses: "icon icon-close-file"
   }]
 }]);
-workingFilesState.set("collapsed", true);
+workingFilesState.set("collapsed", false);
 
 workingFilesState.set("filetree", {});
-projectExplorerState.set('collapsed', true);
-
-Template.nucleusSidebarExplore.events({
-  "click .header-working-files": function(e) {
-    workingFilesState.set('collapsed', ! workingFilesState.get('collapsed'));
-  },
-  "click .action-item": function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-  },
-  "click .header-project-explorer": function(e) {
-    projectExplorerState.set('collapsed', ! projectExplorerState.get('collapsed'));
-  },
-});
+projectExplorerState.set('collapsed', false);
 
 Template.nucleusSidebarExplore.helpers({
   workingFiles: function() {
     var files = workingFilesState.get('workingFiles');
     return files;
-  },
-  workingFilesCollapsedClass: function() {
-    return workingFilesState.get('collapsed') ? "split-view-header--collapsed" : '';
   },
   workingFilesHeight: function() {
     var files = workingFilesState.get('workingFiles');
@@ -65,16 +49,45 @@ Template.nucleusSidebarExplore.helpers({
 
     return appliedHeight;
   },
-  projectName: function() {
-    return "Nucleus Code UI";
-  },
   projectExplorerCollapsedClass: function() {
-    return projectExplorerState.get('collapsed') ? "split-view-header--collapsed" : '';
+    return
   },
   projectExplorerStyles: function() {
     var collapsed = projectExplorerState.get('collapsed');
     var height = collapsed ? '0px' : '100%';
     var display = collapsed ? 'none' : 'block';
     return "{height: " + height + "; display: " + display + ";}";
+  },
+  workingFilesSplitView: function() {
+    return {
+      title: "Working Files",
+      actions: [{
+        actionClasses: "action-item--disabled",
+        actionLabelClasses: "icon icon-save-all",
+        actionTitle: "Save All"
+      }, {
+        actionClasses: "",
+        actionLabelClasses: "icon icon-close-all",
+        actionTitle: "Close All"
+      }]
+    };
+  },
+  projectExplorerSplitView: function() {
+    return {
+      title: "Nucleus Code UI",
+      actions: [{
+        actionLabelClasses: "icon icon-new-file",
+        actionTitle: "New File"
+      }, {
+        actionLabelClasses: "icon icon-new-folder",
+        actionTitle: "New Folder"
+      }, {
+        actionLabelClasses: "icon icon-refresh-explorer",
+        actionTitle: "Refresh"
+      }, {
+        actionLabelClasses: "icon icon-collapse-explorer",
+        actionTitle: "Close All"
+      }]
+    };
   }
 });

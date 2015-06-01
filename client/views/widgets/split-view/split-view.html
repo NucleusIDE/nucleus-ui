@@ -1,0 +1,32 @@
+<template name="nucleusSplitView">
+  <div class="split-view-view">
+    <div class="split-view-header {{headerClasses}} split-view-header--collapsible">
+
+      {{#if actions}}
+      <div class="split-view-header-actions">
+        <div class="sidebar-toolbar">
+          <div class="action-bar">
+            <ul class="actions-container">
+              {{#each actions}}
+              <li class="action-item {{actionClasses}}">
+                <a class="action-label {{actionLabelClasses}}" href="" title="{{actionTitle}}">
+                  {{{actionContent}}}
+                </a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="split-view-header-title">
+        <span>{{title}}</span>
+      </div>
+    </div>
+
+    <div class="split-view-body split-view-collapsible">
+      {{> UI.contentBlock}}
+    </div>
+  </div>
+</template>
