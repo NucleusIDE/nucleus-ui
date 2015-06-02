@@ -1,3 +1,18 @@
 a {
+  color: #fff;
 	text-decoration: none;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  line-height: inherit;
+  color: inherit;
+  height: inherit;
 }

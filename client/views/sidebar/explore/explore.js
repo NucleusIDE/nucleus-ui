@@ -63,11 +63,11 @@ Template.nucleusSidebarExplore.helpers({
       title: "Working Files",
       actions: [{
         actionClasses: "action-item--disabled",
-        actionLabelClasses: "icon icon-save-all",
+        actionLabelClasses: "nucleus-icon nucleus-icon-save-all",
         actionTitle: "Save All"
       }, {
         actionClasses: "",
-        actionLabelClasses: "icon icon-close-all",
+        actionLabelClasses: "nucleus-icon nucleus-icon-close-all",
         actionTitle: "Close All"
       }]
     };
@@ -76,16 +76,16 @@ Template.nucleusSidebarExplore.helpers({
     return {
       title: "Nucleus Code UI",
       actions: [{
-        actionLabelClasses: "icon icon-new-file",
+        actionLabelClasses: "nucleus-icon nucleus-icon-new-file",
         actionTitle: "New File"
       }, {
-        actionLabelClasses: "icon icon-new-folder",
+        actionLabelClasses: "nucleus-icon nucleus-icon-new-folder",
         actionTitle: "New Folder"
       }, {
-        actionLabelClasses: "icon icon-refresh-explorer",
+        actionLabelClasses: "nucleus-icon nucleus-icon-refresh-explorer",
         actionTitle: "Refresh"
       }, {
-        actionLabelClasses: "icon icon-collapse-explorer",
+        actionLabelClasses: "nucleus-icon nucleus-icon-collapse-explorer",
         actionTitle: "Close All"
       }]
     };

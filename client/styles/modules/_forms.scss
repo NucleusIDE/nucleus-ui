@@ -3,7 +3,7 @@
   position: relative;
   padding: 0;
   box-sizing: border-box;
-  font-family: $base-font-size;
+  font-family: $base-font-family;
   font-size: inherit;
 }
 .nucleus-inputbox--idle {
@@ -21,7 +21,7 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
-  line-height: inherit;
+  line-height: inherit !important;
   border: none;
   font-family: inherit;
   font-size: inherit;

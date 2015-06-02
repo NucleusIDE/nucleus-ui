@@ -1,8 +1,8 @@
-@import "modules/font-awesome";
 @import "modules/reset";
-@import "base";
 @import "config";
+@import "base";
 @import "../views/workbench/workbench";
+@import "modules/font-awesome";
 
 .nucleus-workbench {
   @import "modules/misc";
@@ -22,4 +22,5 @@
   @import "../views/sidebar/explore/explore";
   @import "../views/widgets/split-view/split-view";
   @import "../views/widgets/nucleus-tree/nucleus-tree";
+  /* NUCLEUS STYLES END HERE */
 }

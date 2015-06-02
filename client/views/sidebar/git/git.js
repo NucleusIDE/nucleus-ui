@@ -30,11 +30,11 @@ Template.nucleusSidebarGit.helpers({
       actions: [{
         id: 'git-sidebar-action__clean-all',
         title: 'Clean All',
-        labelClasses: 'icon icon-undo'
+        labelClasses: 'nucleus-icon nucleus-icon-undo'
       }, {
         id: 'git-sidebar-action__stage-all',
         title: 'Stage All',
-        labelClasses: 'icon icon-add'
+        labelClasses: 'nucleus-icon nucleus-icon-add'
       }]
     };
   },

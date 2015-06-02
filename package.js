@@ -59,18 +59,15 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
 
   api.use([
-    'jquery', 'deps', 'session',
-    'reactive-dict'
+    'ui', 'templating', 'jquery', 'deps', 'session',
+    'reactive-dict',
+    'particle4dev:sass@2.1.1'
   ]);
 
   var publicFiles = getFilesFromFolder('nucleuside:nucleus-ui', 'public');
   var clientFiles = getFilesFromFolder('nucleuside:nucleus-ui', 'client');
 
   api.add_files(publicFiles, 'client', {isAsset: true});
-  api.add_files(clientFiles, 'client', {isAsset: true});
-
-  api.add_files([
-
-  ], 'client');
+  api.add_files(clientFiles, 'client');
 
 });

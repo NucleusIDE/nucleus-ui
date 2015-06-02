@@ -5,7 +5,7 @@ Session.toggle = function(key, val) {
   return Session.set(key, val);
 };
 
-Template.activitybar.helpers({
+Template.nucleusActivitybar.helpers({
   active: function(template) {
     var activeSidebarTemplate = Session.get('activeSidebarTemplate') || null;
     if (template === activeSidebarTemplate)
@@ -15,7 +15,7 @@ Template.activitybar.helpers({
   }
 });
 
-Template.activitybar.events({
+Template.nucleusActivitybar.events({
   "click #activitybar-git": function(e) {
     e.preventDefault();
     Session.toggle('activeSidebarTemplate', "nucleusSidebarGit");

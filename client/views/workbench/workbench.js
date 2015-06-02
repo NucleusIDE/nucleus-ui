@@ -1,3 +1,0 @@
-// LiveUpdate.configure({
-//   interceptReload: false
-// });
