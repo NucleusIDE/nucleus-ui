@@ -34,6 +34,9 @@ $action-icon-size: 23px;
   width: 100%;
 }
 .activitybar__actions-list-item {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
   position: relative;
   display: block;
   margin: 10px 0;

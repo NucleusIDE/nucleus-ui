@@ -3,26 +3,15 @@
     <div class="activitybar__content">
       <div class="activitybar__actionbar">
         <ul class="activitybar__actions-list">
-          <li class="activitybar__actions-list-item">
-            <a id="activitybar-explore" class="activitybar__action-label {{active 'nucleusSidebarExplore'}}" tabindex="0" title="Explore (⇧⌘E)">
-              <i class="fa fa-file activitybar__action-icon"></i>
-            </a>
-          </li>
-          <li class="activitybar__actions-list-item">
-            <a class="activitybar__action-label {{active 'nucleusSidebarGit'}}" id="activitybar-git" tabindex="0" title="Git (⇧⌘G)">
-              <i class="fa fa-git activitybar__action-icon"></i>
-            </a>
-          </li>
-          <li class="activitybar__actions-list-item">
-            <a class="activitybar__action-label" tabindex="0" title="Deploy (⇧⌘D)">
-              <i class="fa fa-cloud-upload activitybar__action-icon"></i>
-            </a>
-          </li>
-          <li class="activitybar__actions-list-item">
-            <a class="activitybar__action-label" tabindex="0" title="Buddies (⇧⌘B)">
-              <i class="fa fa-users activitybar__action-icon"></i>
-            </a>
-          </li>
+
+          {{#nucleusActivitybarItem title="Explore (⇧⌘E)" tabindex=0 id="activitybar-explore" sidebarTemplate="nucleusSidebarExplore"}}
+          <i class="fa fa-file activitybar__action-icon"></i>
+          {{/nucleusActivitybarItem}}
+
+          {{#nucleusActivitybarItem title="Git (⇧⌘G)" tabindex=1 id="activitybar-git" sidebarTemplate="nucleusSidebarGit"}}
+          <i class="fa fa-git activitybar__action-icon"></i>
+          {{/nucleusActivitybarItem}}
+
         </ul>
       </div>
     </div>
