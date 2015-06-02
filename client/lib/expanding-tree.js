@@ -1,9 +1,12 @@
-ExpandingTree = function(nodes) {
+NucleusExpandingTree = function(nodes) {
+  if (!nodes)
+    return null;
+
   this.setNodes(nodes);
   return this;
 };
 
-ExpandingTree.prototype.getNodeLevel = function(node) {
+NucleusExpandingTree.prototype.getNodeLevel = function(node) {
   var self = this;
 
   if (typeof node === 'undefined' || !node.get('parentId')) {
@@ -13,7 +16,7 @@ ExpandingTree.prototype.getNodeLevel = function(node) {
   return 1 + self.getNodeLevel(self.nodes[node.get('parentId')]);
 };
 
-ExpandingTree.prototype.setExpandAutorun = function(node) {
+NucleusExpandingTree.prototype.setExpandAutorun = function(node) {
   if(!node) return;
   var self = this;
 
@@ -48,7 +51,7 @@ ExpandingTree.prototype.setExpandAutorun = function(node) {
   });
 };
 
-ExpandingTree.prototype.setNodes = function(nodes) {
+NucleusExpandingTree.prototype.setNodes = function(nodes) {
   var self = this;
   this.nodes = {};
 
@@ -76,7 +79,7 @@ ExpandingTree.prototype.setNodes = function(nodes) {
     self.setExpandAutorun(row);
   });
 };
-ExpandingTree.prototype.$getChildren = function(nodes) {
+NucleusExpandingTree.prototype.$getChildren = function(nodes) {
   if (! Array.isArray(nodes)) {
     nodes = [nodes];
   }
@@ -92,7 +95,7 @@ ExpandingTree.prototype.$getChildren = function(nodes) {
 
   return children;
 };
-ExpandingTree.prototype.$getAllChildren = function(nodes) {
+NucleusExpandingTree.prototype.$getAllChildren = function(nodes) {
   var children = this.$getChildren(nodes);
 
   if (!children.length)
