@@ -26,13 +26,13 @@ $split-view-header-height: 24px;
 }
 
 .split-view-header--collapsible {
-  background-image: url("/ui/widgets/arrow-collapse-dark.svg");
+  background-image: url("#{$base-url}/ui/widgets/arrow-collapse-dark.svg");
   background-position: 2px center;
   background-repeat: no-repeat;
   cursor: pointer;
 }
 .split-view-header--collapsible:not(.split-view-header--collapsed) {
-  background-image: url("/ui/widgets/arrow-expand-dark.svg")
+  background-image: url("#{$base-url}/ui/widgets/arrow-expand-dark.svg")
 }
 .split-view-header--collapsed {
   height: $split-view-header-height;
