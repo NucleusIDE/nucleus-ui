@@ -1,5 +1,6 @@
 .workarea {
-  width: 100%;
+  width: calc(100% - #{$sidebar-width});
+  margin-left: $sidebar-width;
   height: 100%;
   top: 0;
   bottom: 0;
@@ -15,4 +16,5 @@
 
 .workarea__content {
   font-size: $base-font-size;
+  height: 100%;
 }
