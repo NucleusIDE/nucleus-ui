@@ -70,5 +70,5 @@ Package.onUse(function(api) {
   api.add_files(publicFiles, 'client', {isAsset: true});
   api.add_files(clientFiles, 'client');
 
-  api.export(['NucleusExpandingTree'], ['client']);
+  api.export(['NucleusUI', 'NucleusExpandingTree'], ['client']);
 });

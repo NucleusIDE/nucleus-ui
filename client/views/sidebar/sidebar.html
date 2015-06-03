@@ -1,11 +1,12 @@
 <template name="nucleusSidebar">
-  {{#if activeTemplate}}
-  <div class="sidebar">
+  <div class="sidebar {{hideSidebarClass}}">
+    <div class="should-hide-nucleus-sidebar-explore">
+      {{> nucleusSidebarExplore}}
+    </div>
+
     {{> UI.dynamic template=activeTemplate}}
   </div>
-  {{/if}}
 </template>
-
 
 <template name="nucleusSidebar_title">
   <div class="sidebar-title">
