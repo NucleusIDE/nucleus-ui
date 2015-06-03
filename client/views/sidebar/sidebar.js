@@ -9,8 +9,6 @@ Template.nucleusSidebar.helpers({
       return '';
     }
 
-    window.GlobalState = GlobalState;
-
     GlobalState.set('sidebarWidth', 0);
     return 'hidden';
   },
