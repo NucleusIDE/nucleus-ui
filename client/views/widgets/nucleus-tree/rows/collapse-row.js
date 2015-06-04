@@ -1,5 +1,7 @@
 Template.nucleusTree_collapse_row.events({
   "click .nucleus-tree__row": function(e) {
-    Utils.rToggle(this, 'expanded');
+    if (this.get('type') === 'folder') {
+      Utils.rToggle(this, 'expanded');
+    }
   }
 });

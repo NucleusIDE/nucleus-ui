@@ -75,7 +75,6 @@ NucleusExpandingTree.prototype.setNodes = function(nodes) {
       row.setDefault('expanded', false);
       Utils.rAdd(row, 'rowClasses', 'hidden');
     }
-
     self.setExpandAutorun(row);
   });
 };

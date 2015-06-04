@@ -1,5 +1,6 @@
 $nucleus-tree-row-height: 24px;
 $nucleus-tree-row-focused-color: #2f3334;
+$nucleus-focused-row-color: #3F3F46;
 
 .nucleus-tree {
   position: relative;
@@ -30,7 +31,7 @@ $nucleus-tree-row-focused-color: #2f3334;
   width: 100%;
   box-sizing: border-box;
 
-  &:hover {
+  &:hover:not(.nucleus-tree__row--focused) {
     background-color: #2A2D2E;
   }
 }
@@ -123,4 +124,8 @@ $nucleus-tree-row-focused-color: #2f3334;
 .nucleus-tree__row--expanded > .nucleus-tree__row-content:after {
   border-width: 0;
   border-color: transparent;
+}
+
+.nucleus-tree__row--focused, .nucleus-tree__row--focused-folder {
+  background-color: $nucleus-focused-row-color;
 }
