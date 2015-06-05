@@ -6,7 +6,7 @@ $split-view-header-height: 24px;
 
 .split-view-view {
   min-height: $split-view-header-height;
-  widget: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -59,7 +59,9 @@ $split-view-header-height: 24px;
 
 .split-view-body {
   height: calc(100% - 24px);
+  overflow: auto;
 }
-.split-view-collapsible {
 
+.split-view-scrollable {
+  overflow: auto;
 }

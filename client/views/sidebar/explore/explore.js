@@ -5,31 +5,6 @@
 var workingFilesState = new ReactiveDict();
 var projectExplorerState = new ReactiveDict();
 
-workingFilesState.set("workingFiles", [{
-  labelClasses: 'working-files-item-label',
-  subcontentClasses: "working-files-item",
-  filename: "_base.scss",
-  filepath: "/client/app/styles",
-  actions: [{
-    actionLabelClasses: "icon icon-close-file"
-  }]
-}, {
-  labelClasses: 'working-files-item-label',
-  subcontentClasses: 'working-files-item',
-  filename: "template.scss",
-  filepath: "/client/app/styles",
-  actions: [{
-    actionLabelClasses: "icon icon-close-file"
-  }]
-}, {
-  labelClasses: 'working-files-item-label',
-  subcontentClasses: 'working-files-item',
-  filename: "admin_controller.js",
-  filepath: "/client/views/admin",
-  actions: [{
-    actionLabelClasses: "icon icon-close-file"
-  }]
-}]);
 workingFilesState.set("collapsed", false);
 
 workingFilesState.set("filetree", {});
@@ -41,16 +16,12 @@ Template.nucleusSidebarExplore.helpers({
     return files;
   },
   workingFilesHeight: function() {
-    var files = workingFilesState.get('workingFiles');
-    var height = files.length * 24;
+    var height = "100%";
 
     var appliedHeight = workingFilesState.get('collapsed') ?
-          0 : height;
+          '0px' : height;
 
     return appliedHeight;
-  },
-  projectExplorerCollapsedClass: function() {
-    return
   },
   projectExplorerStyles: function() {
     var collapsed = projectExplorerState.get('collapsed');
