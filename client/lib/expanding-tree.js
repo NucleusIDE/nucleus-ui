@@ -1,4 +1,4 @@
-NucleusExpandingTree = function(nodes) {
+UltimateExpandingTree = function(nodes) {
   if (!nodes)
     return null;
 
@@ -6,7 +6,7 @@ NucleusExpandingTree = function(nodes) {
   return this;
 };
 
-NucleusExpandingTree.prototype.getNodeLevel = function(node) {
+UltimateExpandingTree.prototype.getNodeLevel = function(node) {
   var self = this;
 
   if (typeof node === 'undefined' || !node.get('parentId')) {
@@ -16,13 +16,13 @@ NucleusExpandingTree.prototype.getNodeLevel = function(node) {
   return 1 + self.getNodeLevel(self.nodes[node.get('parentId')]);
 };
 
-NucleusExpandingTree.prototype.setExpandAutorun = function(node) {
+UltimateExpandingTree.prototype.setExpandAutorun = function(node) {
   if(!node) return;
   var self = this;
 
   Tracker.autorun(function() {
     var isExpanded = node.get('expanded');
-    var target = $(document.getElementById(node.get('id')));
+    var target = $(document.getElementById(node.get('filepath')));
 
     if (isExpanded === false) {
       Tracker.nonreactive(function() {
@@ -39,7 +39,7 @@ NucleusExpandingTree.prototype.setExpandAutorun = function(node) {
 
         children.forEach(function(child) {
           child = $(child);
-          parent = $(document.getElementById(child.attr('data-parent-id')));
+          var parent = $(document.getElementById(child.attr('data-parent-id')));
           if (parent.hasClass('nucleus-tree__row--expanded')) {
             child.removeClass('hidden');
           }
@@ -51,17 +51,17 @@ NucleusExpandingTree.prototype.setExpandAutorun = function(node) {
   });
 };
 
-NucleusExpandingTree.prototype.setNodes = function(nodes) {
+UltimateExpandingTree.prototype.setNodes = function(nodes) {
   var self = this;
   this.nodes = {};
 
   nodes.forEach(function(row) {
-    self.nodes[row.id] = new ReactiveDict();
+    self.nodes[row.filepath] = new ReactiveDict();
 
     Object.keys(row).forEach(function(key) {
-      self.nodes[row.id].set(key, row[key]);
+      self.nodes[row.filepath].set(key, row[key]);
     });
-    row = self.nodes[row.id];
+    row = self.nodes[row.filepath];
 
     if (row.get('hasChildren'))  //show icon in front of row with children
       Utils.rAdd(row, 'rowClasses', ' nucleus-tree__row--has-children ');
@@ -78,7 +78,7 @@ NucleusExpandingTree.prototype.setNodes = function(nodes) {
     self.setExpandAutorun(row);
   });
 };
-NucleusExpandingTree.prototype.$getChildren = function(nodes) {
+UltimateExpandingTree.prototype.$getChildren = function(nodes) {
   if (! Array.isArray(nodes)) {
     nodes = [nodes];
   }
@@ -89,12 +89,12 @@ NucleusExpandingTree.prototype.$getChildren = function(nodes) {
       node = $(node); //kill two birds with one stone. Am I genius or what? /s
       node.get = node.attr.bind(node);
     }
-    children = children.concat($('[data-parent-id="'+ node.get('id') +'"]').toArray());
+    children = children.concat($('[data-parent-id="'+ node.get('filepath') +'"]').toArray());
   });
 
   return children;
 };
-NucleusExpandingTree.prototype.$getAllChildren = function(nodes) {
+UltimateExpandingTree.prototype.$getAllChildren = function(nodes) {
   var children = this.$getChildren(nodes);
 
   if (!children.length)

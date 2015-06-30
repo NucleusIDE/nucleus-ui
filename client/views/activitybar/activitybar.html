@@ -4,14 +4,14 @@
       <div class="activitybar__actionbar">
         <ul class="activitybar__actions-list">
 
-          {{#nucleusActivitybarItem title="Explore (⇧⌘E)" tabindex=0 id="activitybar-explore" sidebarTemplate="nucleusSidebarExplore"}}
-          <i class="fa fa-file activitybar__action-icon"></i>
-          {{/nucleusActivitybarItem}}
+          {{#each views}}
+          {{> UI.dynamic template=this}}
+          {{/each}}
 
+          <!--
           {{#nucleusActivitybarItem title="Git (⇧⌘G)" tabindex=1 id="activitybar-git" sidebarTemplate="nucleusSidebarGit"}}
           <i class="fa fa-git activitybar__action-icon"></i>
-          {{/nucleusActivitybarItem}}
-
+          {{/nucleusActivitybarItem}} -->
         </ul>
       </div>
     </div>
