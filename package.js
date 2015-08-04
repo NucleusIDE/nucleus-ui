@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'nucleuside:nucleus-ui',
+  name: 'ultimateide:ultimate-ui',
   version: '0.0.1',
   summary: 'UI for Nucleus IDE',
   git: 'https://github.com/nucleuside/nucleus-ui',
@@ -45,7 +45,6 @@ function getFilesFromFolder(packageName, folder){
   }
 
   packagePath = path.resolve(packagePath);
-
   // chdir to our package directory
   process.chdir(path.join(packagePath));
   // launch initial walk
@@ -64,8 +63,8 @@ Package.onUse(function(api) {
     'particle4dev:sass@2.1.1'
   ]);
 
-  var publicFiles = getFilesFromFolder('nucleuside:nucleus-ui', 'public');
-  var clientFiles = getFilesFromFolder('nucleuside:nucleus-ui', 'client');
+  var publicFiles = getFilesFromFolder('ultimateide:ultimate-ui', 'public');
+  var clientFiles = getFilesFromFolder('ultimateide:ultimate-ui', 'client');
 
   api.add_files(publicFiles, 'client', {isAsset: true});
   api.add_files(clientFiles, 'client');
