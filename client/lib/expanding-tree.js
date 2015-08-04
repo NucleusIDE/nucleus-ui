@@ -1,3 +1,5 @@
+/*global Tracker*/
+
 UltimateExpandingTree = function(nodes) {
   if (!nodes)
     return null;
@@ -29,6 +31,7 @@ UltimateExpandingTree.prototype.setExpandAutorun = function(node) {
         target.removeClass('nucleus-tree__row--expanded');
 
         var children = self.$getAllChildren(node);
+
         children.forEach(function(child) { $(child).addClass('hidden'); });
       });
     } else if (isExpanded === true) {
@@ -89,7 +92,8 @@ UltimateExpandingTree.prototype.$getChildren = function(nodes) {
       node = $(node); //kill two birds with one stone. Am I genius or what? /s
       node.get = node.attr.bind(node);
     }
-    children = children.concat($('[data-parent-id="'+ node.get('filepath') +'"]').toArray());
+    children = children.concat($('[data-parent-id="'+ (node.get('filepath') || node.get('id')) +'"]').toArray());
+    // console.log('CHILDREN OF', node.get('filepath'), ': ', children);
   });
 
   return children;
@@ -97,8 +101,10 @@ UltimateExpandingTree.prototype.$getChildren = function(nodes) {
 UltimateExpandingTree.prototype.$getAllChildren = function(nodes) {
   var children = this.$getChildren(nodes);
 
-  if (!children.length)
+  if (!children.length) {
     return children;
+  }
 
-  return children.concat(this.$getAllChildren(children));
+  children = children.concat(this.$getAllChildren(children));
+  return children;
 };
