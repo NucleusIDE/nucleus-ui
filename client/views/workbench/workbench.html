@@ -1,5 +1,16 @@
 <template name="nucleusWorkbench">
   <div class="nucleus-workbench-container">
+    {{#if shouldShowUltimateLoginButton}}
+
+    <div id="nucleus_login_prompt">
+      <div id="nucleus_login_form" action="#">
+        <a class="login-with-github-btn" href="{{githubAuthProxyURL}}">
+          <i class="fa fa-github"></i> Sign in with Github
+        </a>
+      </div>
+    </div>
+
+    {{else}}
     <div class="nucleus-workbench">
       {{> nucleusActivitybar}}
       {{> nucleusSidebar}}
@@ -7,5 +18,6 @@
       {{> statusbar}}
       {{> quickOpenWidget}}
     </div>
+    {{/if}}
   </div>
 </template>
