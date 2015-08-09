@@ -4,12 +4,12 @@
       <div class="nucleus-tree__row-subcontent {{subcontentClasses}}">
 
         {{#if status}}
-        <span class="status {{statusClasses}}">{{status}}</span>
+        <span class="status {{statusClasses}}" style="{{statusStyles}}">{{status}}</span>
         {{/if}}
 
         <div class="{{labelClasses}}">
-          <span class="file-name">{{filename}}</span>
-          <span class="folder">{{appPath}}</span>
+          <span class="file-name">{{label}}</span>
+          <span class="folder">{{labelSecondary}}</span>
         </div>
 
       </div>

@@ -2,14 +2,14 @@ var statusRows = [{
   subcontentClasses: 'nucleus-tree-git-file-status',
   status: 'M',
   statusClasses: 'status--modified',
-  filename: '_base.scss',
-  filepath: '/client/styles'
+  label: '_base.scss',
+  labelSecondary: '/client/styles'
 }, {
   subcontentClasses: 'nucleus-tree-git-file-status',
   status: 'D',
   statusClasses: 'status--deleted',
-  filename: '_fake.scss',
-  filepath: '/client/styles'
+  label: '_fake.scss',
+  labelSecondary: '/client/styles'
 }];
 
 Template.nucleusSidebarGit.helpers({
