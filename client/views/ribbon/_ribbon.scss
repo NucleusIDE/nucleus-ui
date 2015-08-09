@@ -1,0 +1,16 @@
+.ultimate-ribbon-wrapper {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+
+  img {
+    height: 50px;
+    transition: all 1s ease;
+  }
+}
