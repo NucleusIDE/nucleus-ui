@@ -1,6 +1,6 @@
 Package.describe({
   name: 'ultimateide:ultimate-ui',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'UI for Nucleus IDE',
   git: 'https://github.com/nucleuside/nucleus-ui',
   documentation: 'README.org'
