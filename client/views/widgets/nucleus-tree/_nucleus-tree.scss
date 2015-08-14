@@ -130,3 +130,7 @@ $nucleus-focused-row-color: #3F3F46;
 .nucleus-tree__row--focused, .nucleus-tree__row--focused-folder {
   background-color: $nucleus-focused-row-color;
 }
+
+.working-files-item-temporary {
+  font-style: italic;
+}
