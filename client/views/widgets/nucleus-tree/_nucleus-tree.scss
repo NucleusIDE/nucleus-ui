@@ -1,5 +1,6 @@
 $nucleus-tree-row-height: 24px;
 $nucleus-tree-row-focused-color: #2f3334;
+$nucleus-tree-row-focused-folder-color: #007ACC;;
 $nucleus-focused-row-color: #3F3F46;
 
 .nucleus-tree {
@@ -127,8 +128,12 @@ $nucleus-focused-row-color: #3F3F46;
   border-color: transparent;
 }
 
-.nucleus-tree__row--focused, .nucleus-tree__row--focused-folder {
+.nucleus-tree__row--focused {
   background-color: $nucleus-focused-row-color;
+}
+
+.nucleus-tree__row--focused-folder {
+  background-color: darken($nucleus-focused-row-color, 08);
 }
 
 .working-files-item-temporary {

@@ -37,5 +37,33 @@
   max-height: 20vh;
 }
 .explorer-project-files {
+  position: relative;
   max-height: calc(80vh - 22px);
+}
+
+.project-explorer-spinner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    background-color: #252526;
+}
+
+.project-explorer-context-menu {
+    background: #5A5858;
+    border-radius: 4px;
+}
+
+.project-explorer-context-menu li {
+    padding: 4px 6px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #eee;
+}
+
+.project-explorer-context-menu li:hover {
+    background: darken(#5A5858, 10);
+    color: #fff;
 }

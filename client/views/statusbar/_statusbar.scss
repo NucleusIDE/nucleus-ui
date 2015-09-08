@@ -52,3 +52,7 @@ $statusbar-font-size: 12px;
 .statusbar__feedback i {
   font-size: 1.7 * $statusbar-font-size;
 }
+
+.statusbar__flash-messages button.close {
+  background-color: transparent;
+}
